@@ -59,8 +59,11 @@
       "unitTestRunner": "jest"
     },
     "@nx/angular:component": {
-      "style": "scss"
-    }
+      "style": "scss",
+      "standalone": true,
+      "changeDetection": "OnPush"
+    },
+    "defaultProject": "doctor-flight"
   },
   "nxCloudAccessToken": "YTczOWI1OWItY2I5OC00ZTc5LWE2MDEtYjg0ZWJiZjFiYWVlfHJlYWQtd3JpdGU="
 }

@@ -1,0 +1,11 @@
+{
+    "*.ts": [
+  "nx affected:lint --fix --files"
+    ],
+    "*": [
+        "npx nx format:write --files"
+    ],
+    "*.scss": [
+"nx run-many --target=stylelint"
+    ]
+}

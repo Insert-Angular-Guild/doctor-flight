@@ -1,26 +1,26 @@
 {
-  "name": "flight-app",
+  "name": "doctor-flight",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "ddd-nx",
-  "sourceRoot": "apps/flight-app/src",
-  "tags": [],
+  "prefix": "doctor-flight",
+  "sourceRoot": "apps/doctor-flight/src",
+  "tags": ["type:app", "domain:doctor-flight"],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/flight-app",
-        "index": "apps/flight-app/src/index.html",
-        "browser": "apps/flight-app/src/main.ts",
+        "outputPath": "dist/apps/doctor-flight",
+        "index": "apps/doctor-flight/src/index.html",
+        "browser": "apps/doctor-flight/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/flight-app/tsconfig.app.json",
+        "tsConfig": "apps/doctor-flight/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          "apps/flight-app/src/favicon.ico",
-          "apps/flight-app/src/assets"
+          "apps/doctor-flight/src/favicon.ico",
+          "apps/doctor-flight/src/assets"
         ],
-        "styles": ["apps/flight-app/src/styles.scss"],
+        "styles": ["apps/doctor-flight/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -51,10 +51,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "flight-app:build:production"
+          "buildTarget": "doctor-flight:build:production"
         },
         "development": {
-          "buildTarget": "flight-app:build:development"
+          "buildTarget": "doctor-flight:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -62,7 +62,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "flight-app:build"
+        "buildTarget": "doctor-flight:build"
       }
     },
     "lint": {
@@ -70,8 +70,8 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "apps/flight-app/**/*.ts",
-          "apps/flight-app/**/*.html"
+          "apps/doctor-flight/**/*.ts",
+          "apps/doctor-flight/**/*.html"
         ]
       }
     },
@@ -79,14 +79,14 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/flight-app/jest.config.ts"
+        "jestConfig": "apps/doctor-flight/jest.config.ts"
       }
     },
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "flight-app:build",
-        "staticFilePath": "dist/apps/flight-app/browser"
+        "buildTarget": "doctor-flight:build",
+        "staticFilePath": "dist/apps/doctor-flight/browser"
       }
     }
   }
