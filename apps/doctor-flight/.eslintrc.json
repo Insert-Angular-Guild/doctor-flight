@@ -13,7 +13,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "dddNx",
+            "prefix": "doctorFlight",
             "style": "camelCase"
           }
         ],
@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "ddd-nx",
+            "prefix": "doctor-flight",
             "style": "kebab-case"
           }
         ]

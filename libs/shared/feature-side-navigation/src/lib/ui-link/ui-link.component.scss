@@ -1,0 +1,30 @@
+a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  box-sizing: border-box;
+  padding: 16px;
+  min-width: calc(var(--min-expanded-sidenav-width) - 32px);
+  text-decoration: none;
+  transition: background-color 75ms ease-out;
+  border-radius: 4px;
+  color: #0a2351;
+
+  .text-container {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &:hover {
+    background-color: #deebff;
+  }
+
+  &.active {
+    background-color: #c1daff;
+    font-weight: bold;
+    color: #1e90ff;
+  }
+}

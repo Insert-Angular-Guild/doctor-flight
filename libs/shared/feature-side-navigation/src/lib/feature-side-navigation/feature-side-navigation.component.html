@@ -1,0 +1,23 @@
+<div class="sidenav-body-container">
+  <div
+    class="sidenav-body"
+    [class.slide-in-from-left]="sidenavService.isSlidingInFromLeft"
+    [class.slide-in-from-right]="sidenavService.isSlidingInFromRight"
+  >
+    <ng-template sidenavContentArea></ng-template>
+  </div>
+</div>
+
+<div
+  class="resize-handle"
+  [class.resizing]="resizingEvent.isResizing"
+  (mousedown)="startResizing($event)"
+></div>
+
+<button
+  class="toggle-button is-expanded"
+  (click)="this.sidenavService.toggleSidenav()"
+  [class.is-flipped]="sidenavService.isExpanded"
+>
+  <mat-icon>chevron_right</mat-icon>
+</button>

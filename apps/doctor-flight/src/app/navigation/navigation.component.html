@@ -1,0 +1,15 @@
+<shared-feature-side-navigation-ui-navigation>
+  <h4 header>Doctor Flight</h4>
+  <ng-container navigation-links>
+    <shared-feature-side-navigation-ui-link
+      *ngFor="let link of sideNavLinks"
+      [routerLink]="link.path"
+      [routerLinkActiveOptions]="
+        link.exact ? { exact: true } : { exact: false }
+      "
+    >
+      <mat-icon icon>{{ link.iconName }}</mat-icon>
+      {{ link.name }}
+    </shared-feature-side-navigation-ui-link>
+  </ng-container>
+</shared-feature-side-navigation-ui-navigation>

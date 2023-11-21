@@ -19,7 +19,17 @@
     "module": "ES2022",
     "useDefineForClassFields": false,
     "lib": ["ES2022", "dom"],
-    "paths": {}
+    "paths": {
+      "@ddd-nx/libs/shared/ui-screen-container": [
+        "apps/doctor-flight/src/app/libs/shared/ui-screen-container/src/index.ts"
+      ],
+      "@ddd-nx/shared/ui-screen-container": [
+        "libs/shared/ui-screen-container/src/index.ts"
+      ],
+      "@shared/feature-side-navigation": [
+        "libs/shared/feature-side-navigation/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"],
   "angularCompilerOptions": {
