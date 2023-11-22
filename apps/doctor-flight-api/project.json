@@ -1,0 +1,57 @@
+{
+  "name": "doctor-flight-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/doctor-flight-api/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/doctor-flight-api",
+        "main": "apps/doctor-flight-api/src/main.ts",
+        "tsConfig": "apps/doctor-flight-api/tsconfig.app.json",
+        "assets": ["apps/doctor-flight-api/src/assets"],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/doctor-flight-api/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "doctor-flight-api:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "doctor-flight-api:build:development"
+        },
+        "production": {
+          "buildTarget": "doctor-flight-api:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/doctor-flight-api/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/doctor-flight-api/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}

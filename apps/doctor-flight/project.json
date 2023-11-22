@@ -54,7 +54,8 @@
           "buildTarget": "doctor-flight:build:production"
         },
         "development": {
-          "buildTarget": "doctor-flight:build:development"
+          "buildTarget": "doctor-flight:build:development",
+          "proxyConfig": "apps/doctor-flight/src/proxy/proxy.conf.json"
         }
       },
       "defaultConfiguration": "development"
