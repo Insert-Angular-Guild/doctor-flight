@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BookingFeatureListComponent } from './booking-feature-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('BookingFeatureListBookingsComponent', () => {
   let component: BookingFeatureListComponent;
@@ -7,7 +8,8 @@ describe('BookingFeatureListBookingsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BookingFeatureListComponent]
+      imports: [BookingFeatureListComponent],
+      providers: [HttpClientModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(BookingFeatureListComponent);
