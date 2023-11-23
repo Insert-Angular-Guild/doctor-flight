@@ -1,0 +1,27 @@
+{
+  "name": "booking-feature-list-bookings",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/booking/feature-list-bookings/src",
+  "prefix": "booking",
+  "tags": ["domain:booking", "type:feature"],
+  "projectType": "library",
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/booking/feature-list-bookings/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/booking/feature-list-bookings/**/*.ts",
+          "libs/booking/feature-list-bookings/**/*.html"
+        ]
+      }
+    }
+  }
+}

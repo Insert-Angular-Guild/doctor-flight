@@ -20,14 +20,16 @@
     "useDefineForClassFields": false,
     "lib": ["ES2022", "dom"],
     "paths": {
-      "@ddd-nx/libs/shared/ui-screen-container": [
-        "apps/doctor-flight/src/app/libs/shared/ui-screen-container/src/index.ts"
-      ],
-      "@ddd-nx/shared/ui-screen-container": [
-        "libs/shared/ui-screen-container/src/index.ts"
+      "@booking": ["libs/booking/index.ts"],
+      "@booking/domain": ["libs/booking/domain/src/index.ts"],
+      "@booking/feature-list-bookings": [
+        "libs/booking/feature-list-bookings/src/index.ts"
       ],
       "@shared/feature-side-navigation": [
         "libs/shared/feature-side-navigation/src/index.ts"
+      ],
+      "@shared/util-rxjs-custom-operators": [
+        "libs/shared/util-rxjs-custom-operators/src/index.ts"
       ]
     }
   },
