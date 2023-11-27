@@ -19,5 +19,5 @@ import { BookingCardUI } from '../model/booking-card.ui.model';
 })
 export class UICardComponent {
   @Input()
-  ui: BookingCardUI;
+  ui!: BookingCardUI;
 }

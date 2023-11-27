@@ -15,5 +15,5 @@ import { FoodUI } from '../model/booking-card.ui.model';
 })
 export class UIFoodComponent {
   @Input()
-  ui: FoodUI;
+  ui!: FoodUI;
 }
