@@ -1,1 +1,3 @@
-<h4>booking-feature-list work</h4>
+<div *ngIf="dataSource$ | async as dataSource">
+  <booking-ui-card *ngFor="let data of dataSource"></booking-ui-card>
+</div>

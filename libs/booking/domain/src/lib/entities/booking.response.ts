@@ -1,22 +1,26 @@
 export interface BookingResponse {
+  info: BookingExtraInfo;
+  plane: PlaneResponse;
+  date: Date;
+  car?: CarResponse;
+  hotel?: HotelResponse;
+  nourishment?: NourishmentResponse[];
+  excursions?: ExcursionResponse[];
+}
+
+export interface BookingExtraInfo {
   origin: string;
   destination: string;
-  plane: Plane;
-  date: Date;
-  car?: Car;
-  hotel?: Hotel;
-  nourishment?: Nourishment[];
-  excursions?: Excursion[];
   priority: boolean;
 }
 
-export interface Nourishment {
+export interface NourishmentResponse {
   name: string;
   calories: number;
   type: string;
 }
 
-export interface Plane {
+export interface PlaneResponse {
   manufacturer: string;
   model: string;
   variant?: string;
@@ -25,7 +29,7 @@ export interface Plane {
   maxSpeed?: number;
 }
 
-export interface Car {
+export interface CarResponse {
   name: string;
   company: string;
   seats: number;
@@ -33,37 +37,37 @@ export interface Car {
   year: number;
   color: string;
   mileage: number;
-  engine?: Engine;
+  engine?: EngineResponse;
   transition?: string;
   vin?: number;
   features: string[];
-  registration?: Registration;
-  insurance?: Insurance;
+  registration?: RegistrationResponse;
+  insurance?: InsuranceResponse;
 }
 
-export interface Engine {
+export interface EngineResponse {
   type: string;
   fuelType: string;
   horsepower: number;
 }
 
-export interface Registration {
+export interface RegistrationResponse {
   number: string;
   expiryDate: string;
 }
 
-export interface Insurance {
+export interface InsuranceResponse {
   provider: string;
   policyNumber: string;
-  validity: Validity;
+  validity: ValidityResponse;
 }
 
-export interface Validity {
+export interface ValidityResponse {
   from: Date;
   to: Date;
 }
 
-interface Excursion {
+interface ExcursionResponse {
   id: number;
   destination: string;
   date: Date;
@@ -72,7 +76,7 @@ interface Excursion {
   description?: string;
 }
 
-interface Hotel {
+interface HotelResponse {
   name: string;
   location: string;
   rating: number;

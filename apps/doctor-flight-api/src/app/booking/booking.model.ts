@@ -1,12 +1,16 @@
 export interface Booking {
-  origin: string;
-  destination: string;
+  info: BookingExtraInfo;
   plane: Plane;
   date: Date;
   car?: Car;
   hotel?: Hotel;
   nourishment?: Nourishment[];
   excursions?: Excursion[];
+}
+
+export interface BookingExtraInfo {
+  origin: string;
+  destination: string;
   priority: boolean;
 }
 

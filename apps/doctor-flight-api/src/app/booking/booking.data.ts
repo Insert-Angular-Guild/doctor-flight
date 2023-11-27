@@ -2,8 +2,11 @@ import { Booking } from './booking.model';
 
 export const bookingData: Booking[] = [
   {
-    origin: 'New York',
-    destination: 'Los Angeles',
+    info: {
+      origin: 'New York',
+      destination: 'Los Angeles',
+      priority: false
+    },
     plane: {
       manufacturer: 'Boeing',
       model: '747',
@@ -98,12 +101,14 @@ export const bookingData: Booking[] = [
         guide: 'Emily Smith',
         description: 'Enjoy a tour of local wineries and tastings.'
       }
-    ],
-    priority: true
+    ]
   },
   {
-    origin: 'London',
-    destination: 'Paris',
+    info: {
+      origin: 'London',
+      destination: 'Paris',
+      priority: true
+    },
     plane: {
       manufacturer: 'Airbus',
       model: 'A320',
@@ -198,7 +203,6 @@ export const bookingData: Booking[] = [
         guide: 'Lucas Johnson',
         description: 'Enjoy a scenic cruise along the Seine River.'
       }
-    ],
-    priority: false
+    ]
   }
 ];
