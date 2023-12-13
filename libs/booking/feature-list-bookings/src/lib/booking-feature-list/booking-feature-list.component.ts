@@ -13,12 +13,12 @@ import { Booking, BookingFacade } from '@booking/domain';
 import { log } from '@shared/util-rxjs-custom-operators';
 
 // ui
-import { UICardComponent } from '../ui-card/ui-card.component';
+import { UIBookingCard } from '../ui-card/ui-booking-card-container.component';
 
 @Component({
   selector: 'booking-feature-list',
   standalone: true,
-  imports: [CommonModule, MatTableModule, UICardComponent],
+  imports: [CommonModule, MatTableModule, UIBookingCard],
   templateUrl: './booking-feature-list.component.html',
   styleUrls: ['./booking-feature-list.component.scss']
 })

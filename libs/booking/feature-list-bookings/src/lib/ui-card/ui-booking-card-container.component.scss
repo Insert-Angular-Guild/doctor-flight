@@ -1,0 +1,29 @@
+.text-logo {
+  display: flex;
+  gap: 1rem;
+  font-weight: 400;
+  color: #868078;
+
+  img {
+    width: 10%;
+  }
+}
+
+.service-offered--card-header {
+  font-size: 20px;
+  font-weight: 600;
+  color: #261e15;
+  margin-bottom: 0;
+}
+
+.service-offered--header-description {
+  font-size: 16px;
+  font-weight: 400;
+  color: #868078;
+}
+
+.choose-as--underline {
+  border-bottom: 1px solid lightgreen;
+  color: #d9d9d9;
+  font-weight: 100;
+}

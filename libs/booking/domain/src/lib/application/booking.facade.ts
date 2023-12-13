@@ -43,15 +43,19 @@ export class BookingFacade {
       origin: booking.info.origin,
       destination: booking.info.destination,
       priority: booking.info.priority,
-      food: [this.mapToFood(booking.nourishment || [])]
+      food: this.mapToFood(booking.nourishment || [])
     };
   }
 
-  private mapToFood(nourishmentResponses: NourishmentResponse[]): Food {
-    return {
-      name: nourishmentResponses[0].name,
-      calories: nourishmentResponses[0].calories,
-      type: nourishmentResponses[0].type
-    };
+  private mapToFood(nourishmentResponses: NourishmentResponse[]): Food[] {
+    return nourishmentResponses.map(
+      (nourishmentResponse: NourishmentResponse) => {
+        return {
+          name: nourishmentResponse.name,
+          calories: nourishmentResponse.calories,
+          type: nourishmentResponse.type
+        };
+      }
+    );
   }
 }

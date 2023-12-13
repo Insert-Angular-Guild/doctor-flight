@@ -1,3 +1,6 @@
-<div *ngIf="dataSource$ | async as dataSource">
+<div
+  class="booking-feature-list-wrapper"
+  *ngIf="dataSource$ | async as dataSource"
+>
   <booking-ui-card *ngFor="let data of dataSource"></booking-ui-card>
 </div>

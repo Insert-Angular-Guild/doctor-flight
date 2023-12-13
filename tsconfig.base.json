@@ -28,6 +28,7 @@
       "@shared/feature-side-navigation": [
         "libs/shared/feature-side-navigation/src/index.ts"
       ],
+      "@shared/ui-card": ["libs/shared/ui-card/src/index.ts"],
       "@shared/util-rxjs-custom-operators": [
         "libs/shared/util-rxjs-custom-operators/src/index.ts"
       ]

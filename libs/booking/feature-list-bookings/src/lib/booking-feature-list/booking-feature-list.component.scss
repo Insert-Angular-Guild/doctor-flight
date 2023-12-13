@@ -1,4 +1,9 @@
 :host {
+  height: 100%;
+  width: 100%;
+}
+
+.booking-feature-list-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }

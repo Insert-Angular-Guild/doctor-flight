@@ -1,4 +1,5 @@
 @import '../../../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200, 300,400,500,600,700,900');
 
 :root {
   --sidenav-width: 300px;
@@ -7,6 +8,15 @@
 }
 
 body {
+  padding: 0;
   margin: 0;
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+
+html {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  color: #340921;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
 }
