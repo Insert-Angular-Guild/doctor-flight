@@ -1,0 +1,27 @@
+<div class="ui-commercial">
+  <div>
+    <span>Check out are best offers!</span>
+  </div>
+  <div>
+    @if (commercialConfig?.type === 'FOOD') {
+    <shared-ui-commercial>
+      <div
+        icons
+        class="ui-food-commercial"
+        style="display: flex; border-radius: 15px"
+      >
+        <div
+          *ngFor="let icon of commercialConfig.headerIcons"
+          class="icon-text-wrapper"
+        >
+          <img [src]="mapToPath(icon)" [alt]="icon" />
+        </div>
+      </div>
+    </shared-ui-commercial>
+    } @else {
+    <shared-ui-commercial>
+      <div>Another commercial type</div>
+    </shared-ui-commercial>
+    }
+  </div>
+</div>

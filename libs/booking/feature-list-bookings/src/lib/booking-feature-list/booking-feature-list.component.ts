@@ -1,5 +1,5 @@
 // angular
-import { Component, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 
@@ -13,17 +13,36 @@ import { Booking, BookingFacade } from '@booking/domain';
 import { log } from '@shared/util-rxjs-custom-operators';
 
 // ui
-import { UIBookingCard } from '../ui-card/ui-booking-card-container.component';
+import { UIBookingCardComponent } from '../ui-card/ui-booking-card-container.component';
+
+// shared
+import {
+  ShadowDirective,
+  SOLID_100,
+  LIGHT_100,
+  MEDIUM_100,
+  StylingShadow
+} from '@shared/util-styling-directives';
 
 @Component({
   selector: 'booking-feature-list',
   standalone: true,
-  imports: [CommonModule, MatTableModule, UIBookingCard],
+  imports: [
+    CommonModule,
+    MatTableModule,
+    UIBookingCardComponent,
+    ShadowDirective
+  ],
   templateUrl: './booking-feature-list.component.html',
-  styleUrls: ['./booking-feature-list.component.scss']
+  styleUrls: ['./booking-feature-list.component.scss'],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class BookingFeatureListComponent implements OnInit {
   dataSource$: Observable<Booking[]> = this.facade.bookings$;
+
+  LIGHT_100: StylingShadow = LIGHT_100;
+  MEDIUM_100: StylingShadow = MEDIUM_100;
+  SOLID_100: StylingShadow = SOLID_100;
 
   constructor(private facade: BookingFacade) {}
 

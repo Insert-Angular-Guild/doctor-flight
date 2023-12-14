@@ -1,0 +1,16 @@
+.ui-commercial {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.icon-text-wrapper {
+  display: flex;
+  gap: 1rem;
+  font-weight: 400;
+  color: #868078;
+
+  img {
+    width: 5vw;
+  }
+}

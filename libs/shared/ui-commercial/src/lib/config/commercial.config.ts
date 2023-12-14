@@ -2,15 +2,11 @@ import { InjectionToken } from '@angular/core';
 
 export type CommercialType = 'FOOD' | 'EXCURSION';
 
-export interface Commercial {
-  load: () => void;
-  refresh: () => void;
-}
-
 export interface CommercialConfig {
   url: string;
   type: CommercialType;
   active: boolean;
+  headerIcons: string[];
 }
 
 export const COMMERCIAL_CONFIG = new InjectionToken<CommercialConfig>(
@@ -20,15 +16,8 @@ export const COMMERCIAL_CONFIG = new InjectionToken<CommercialConfig>(
     factory: () => ({
       url: 'api/food/commercials',
       type: 'FOOD',
-      active: true
+      active: true,
+      headerIcons: ['kfc', 'mcdonald', 'pizza-hut']
     })
   }
 );
-
-export const COMMERCIAL = new InjectionToken<Commercial>('commercial', {
-  providedIn: 'root',
-  factory: () => ({
-    load: () => {},
-    refresh: () => {}
-  })
-});

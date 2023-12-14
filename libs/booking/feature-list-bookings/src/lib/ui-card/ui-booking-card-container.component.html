@@ -14,20 +14,12 @@
       <p style="margin-bottom: 1rem" class="service-offered--card-header">
         Premium Additions
       </p>
-      <div class="text-logo">
-        <img src="/assets/diamond.svg" alt="diamond" />
-        <p>Premium Class</p>
-      </div>
-      <div class="text-logo">
-        <img src="/assets/playstation.svg" alt="playstation" />
-        <p>Playstation</p>
-      </div>
-      <div class="text-logo">
-        <img src="/assets/netflix.svg" alt="netflix" />
-        <p>Netflix</p>
+      <div *ngFor="let addition of additions" class="text-logo">
+        <img [src]="mapToPath(addition)" [alt]="addition" />
+        <p>{{ addition }}</p>
       </div>
       <span class="choose-as--underline"></span>
     </div>
-    <shared-ui-card-commercial commercial></shared-ui-card-commercial
-  ></shared-ui-card>
+    <shared-ui-commercial-container commercial></shared-ui-commercial-container>
+  </shared-ui-card>
 </div>
