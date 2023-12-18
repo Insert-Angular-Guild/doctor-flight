@@ -30,12 +30,14 @@
       ],
       "@shared/ui-card": ["libs/shared/ui-card/src/index.ts"],
       "@shared/ui-commercial": ["libs/shared/ui-commercial/src/index.ts"],
+      "@shared/ui-widget": ["libs/shared/ui-widget/src/index.ts"],
       "@shared/util-rxjs-custom-operators": [
         "libs/shared/util-rxjs-custom-operators/src/index.ts"
       ],
       "@shared/util-styling-directives": [
         "libs/shared/util-styling-directives/src/index.ts"
-      ]
+      ],
+      "@weather": ["libs/weather/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"],

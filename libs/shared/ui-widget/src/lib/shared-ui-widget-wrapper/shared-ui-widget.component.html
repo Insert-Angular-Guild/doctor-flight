@@ -1,0 +1,17 @@
+<div>
+  <ng-content select="[header]"></ng-content>
+  <ng-content select="[widget]"></ng-content>
+  <ng-content select="[button]"></ng-content>
+  <div style="display: flex; justify-content: end">
+    <button
+      style="margin-bottom: 0.5rem"
+      (click)="onRefresh()"
+      mat-fab
+      extended
+      color="primary"
+    >
+      <mat-icon>favorite</mat-icon>
+      Refresh
+    </button>
+  </div>
+</div>

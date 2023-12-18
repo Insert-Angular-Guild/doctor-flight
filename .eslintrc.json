@@ -57,6 +57,10 @@
               {
                 "sourceTag": "domain:booking",
                 "onlyDependOnLibsWithTags": ["domain:booking", "domain:shared"]
+              },
+              {
+                "sourceTag": "domain:weather",
+                "onlyDependOnLibsWithTags": ["domain:weather", "domain:shared"]
               }
             ]
           }

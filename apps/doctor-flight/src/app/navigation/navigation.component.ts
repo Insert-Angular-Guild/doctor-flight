@@ -33,6 +33,11 @@ export class NavigationComponent {
       name: 'Booking',
       iconName: 'attach_file',
       path: `/bookings`
+    },
+    {
+      name: 'Weather',
+      iconName: 'wb_sunny',
+      path: `/weather`
     }
   ];
 }

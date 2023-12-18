@@ -5,8 +5,11 @@ import { CommonModule } from '@angular/common';
 // side-navigation
 import { SideNavigationUIScreenComponent } from '@shared/feature-side-navigation';
 
-// doctor-flight
+// navigation
 import { NavigationComponent } from '../navigation/navigation.component';
+
+// shared
+import { ShadowDirective } from '@shared/util-styling-directives';
 
 @Component({
   selector: 'doctor-flight-home',
@@ -14,7 +17,8 @@ import { NavigationComponent } from '../navigation/navigation.component';
   imports: [
     CommonModule,
     SideNavigationUIScreenComponent,
-    SideNavigationUIScreenComponent
+    SideNavigationUIScreenComponent,
+    ShadowDirective
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']

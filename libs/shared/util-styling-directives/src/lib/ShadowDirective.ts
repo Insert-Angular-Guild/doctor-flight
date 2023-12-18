@@ -36,8 +36,8 @@ export class ShadowDirective {
 
   solid = (colorInput: string): string => {
     return `
-     ${colorInput} 0px 1px 4px,
-     ${colorInput} 0px 0px 0px 3px`;
+     ${colorInput} 0px 19px 38px,
+     ${colorInput} 0px 15px 12px`;
   };
   medium = (colorInput: string): string => {
     return `

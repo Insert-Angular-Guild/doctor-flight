@@ -2,6 +2,10 @@
   class="booking-feature-list-wrapper"
   *ngIf="dataSource$ | async as dataSource"
 >
-  <booking-ui-card *ngFor="let data of dataSource; let i = index">
+  <booking-ui-card
+    stylingShadow
+    *ngFor="let data of dataSource; let i = index"
+    [stylingShadowInput]="i % 2 === 0 ? LIGHT_100 : SOLID_100"
+  >
   </booking-ui-card>
 </div>
