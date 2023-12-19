@@ -1,3 +1,4 @@
+@if ((status$ | async)?.status === 'LIVE') {
 <div class="weather-feature-widget-list">
   <shared-ui-widget class="weather-widget" stylingShadow>
     <div header>
@@ -6,3 +7,6 @@
     <example-widget-component widget></example-widget-component>
   </shared-ui-widget>
 </div>
+} @else {
+<div>Weather Data Loading...</div>
+}

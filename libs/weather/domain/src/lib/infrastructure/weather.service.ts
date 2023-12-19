@@ -13,15 +13,13 @@ import { log } from '@shared/util-rxjs-custom-operators';
 
 const WEATHER_URL = '/api/weather/';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class WeatherService {
   private http: HttpClient = inject(HttpClient);
 
   status(): Observable<WeatherStatus> {
     return this.http
-      .get<WeatherStatus>(WEATHER_URL)
+      .get<WeatherStatus>(`${WEATHER_URL}status`)
       .pipe((weatherStatus$) =>
         log(weatherStatus$, 'WeatherService:::status()')
       );

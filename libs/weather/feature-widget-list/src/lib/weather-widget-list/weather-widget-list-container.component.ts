@@ -3,8 +3,14 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 
+// dependencies
+import { Observable } from 'rxjs';
+
 // facade
 import { WeatherFacade } from '../../../../domain/src';
+
+// entity
+import { WeatherStatus } from '../../../../domain/src/lib/entities/weather.response';
 
 // shared
 import { ShadowDirective } from '@shared/util-styling-directives';
@@ -28,9 +34,10 @@ import {
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class WeatherWidgetListComponentContainer implements OnInit {
+  status$: Observable<WeatherStatus> = this.facade.status$;
   constructor(private facade: WeatherFacade) {}
 
   ngOnInit(): void {
-    this.facade.status$.subscribe(console.log);
+    this.facade.loadStatus();
   }
 }

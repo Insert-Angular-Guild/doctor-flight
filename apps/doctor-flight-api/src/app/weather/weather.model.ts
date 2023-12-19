@@ -1,5 +1,5 @@
 export interface WeatherStatus {
-  status: 'LIVE' | 'LOADING' | 'DEAD';
+  status: 'LIVE' | 'UNKNOWN' | 'DEAD';
   date?: Date;
 }
 
