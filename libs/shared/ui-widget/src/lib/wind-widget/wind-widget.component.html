@@ -1,0 +1,40 @@
+<div class="wind-widget_content">
+  <div class="wind-widget_data-containter">
+    <div class="wind-widget_data">
+      <span class="wind-widget_data-value">{{
+        (windData$ | async)?.speed?.value
+      }}</span>
+      <div class="wind-widget_data-description">
+        <span>{{ (windData$ | async)?.speed?.unit }}</span>
+        <span style="color: #3b849efb">Speed</span>
+      </div>
+    </div>
+    <div class="wind-widget_data">
+      <span class="wind-widget_data-value">{{
+        (windData$ | async)?.gust?.speed
+      }}</span>
+      <div class="wind-widget_data-description">
+        <span>{{ (windData$ | async)?.gust?.unit }}</span>
+        <span style="color: #3b849efb">Gust</span>
+      </div>
+    </div>
+  </div>
+  <div class="wind-widget_compass">
+    <div class="wind-widget_compass-face">
+      <div class="wind-widget_direction-value">
+        <span>{{ (windData$ | async)?.direction?.cardinalDirection }}</span>
+      </div>
+      <span class="wind-widget_north">N</span>
+      <span class="wind-widget_east">E</span>
+      <span class="wind-widget_south">S</span>
+      <span class="wind-widget_west">W</span>
+      <div
+        class="wind-widget_compass-needle"
+        [ngStyle]="{
+          transform:
+            'rotate(' + (windData$ | async)?.direction?.degrees + 'deg)'
+        }"
+      ></div>
+    </div>
+  </div>
+</div>

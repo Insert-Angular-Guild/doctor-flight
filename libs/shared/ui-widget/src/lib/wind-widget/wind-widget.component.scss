@@ -1,0 +1,98 @@
+.wind-widget_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .wind-widget_data-containter {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    .wind-widget_data {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+
+      .wind-widget_data-value {
+        font-size: 32px;
+      }
+
+      .wind-widget_data-description {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .wind-widget_compass {
+    width: 8rem;
+    height: 8rem;
+    border: 0.5rem solid #bee5f5;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+
+    .wind-widget_compass-face {
+      position: relative;
+      width: 90%;
+      height: 90%;
+      border-radius: 50%;
+      background-color: lightgray;
+
+      .wind-widget_direction-value {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        height: 3rem;
+        width: 3rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #333;
+        background-color: #bee5f5;
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .wind-widget_north {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .wind-widget_east {
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .wind-widget_south {
+        position: absolute;
+        bottom: 0%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .wind-widget_west {
+        position: absolute;
+        left: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .wind-widget_compass-needle {
+        position: absolute;
+        bottom: 50%;
+        left: 49.5%;
+        width: 0.1rem;
+        height: 56%;
+        background-color: #3b849efb;
+        transform-origin: 50% 100%;
+      }
+    }
+  }
+}

@@ -6,6 +6,18 @@
     </div>
     <example-widget-component widget></example-widget-component>
   </shared-ui-widget>
+  <shared-ui-widget
+    class="weather-widget"
+    stylingShadow
+    [stylingShadowInput]="{ color: '#bee5f5', type: 'SOLID' }"
+  >
+    <div class="weather-widget-list_header" header>
+      <mat-icon>waves</mat-icon>
+      <span>WIND WIDGET</span>
+    </div>
+    <wind-widget widget style="padding: 6rem"></wind-widget>
+    <widget-refresh-button button></widget-refresh-button>
+  </shared-ui-widget>
 </div>
 } @else {
 <div>Weather Data Loading...</div>

@@ -17,4 +17,11 @@
   padding-top: 2rem;
   padding-left: 2rem;
   padding-right: 2rem;
+
+  .weather-widget-list_header {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
 }
