@@ -8,7 +8,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { WeatherService } from '../infrastructure/weather.service';
 
 // entities
-import { WeatherStatus } from '../entities/weather.response';
+import { WeatherStatus, Snowfall } from '../entities/weather.response';
 
 @Injectable({ providedIn: 'root' })
 export class WeatherFacade {
@@ -16,6 +16,20 @@ export class WeatherFacade {
     status: 'LOADING'
   });
   status$: Observable<WeatherStatus> = this.statusSubject$.asObservable();
+
+  private snowfallSubject$ = new BehaviorSubject<Snowfall>({
+    amount: {
+      value: 0,
+      unit: 'cm'
+    },
+    intensity: 'light',
+    type: 'powdery',
+    accumulation: {
+      value: 0,
+      unit: 'cm'
+    }
+  });
+  snowfall$: Observable<Snowfall> = this.snowfallSubject$.asObservable();
 
   constructor(private service: WeatherService) {}
 
@@ -25,6 +39,17 @@ export class WeatherFacade {
       .pipe()
       .subscribe({
         next: (status: WeatherStatus): void => this.statusSubject$.next(status),
+        error: this.logError()
+      });
+  }
+
+  loadSnowfall(): void {
+    this.service
+      .snowfall()
+      .pipe()
+      .subscribe({
+        next: (snowfall: Snowfall): void =>
+          this.snowfallSubject$.next(snowfall),
         error: this.logError()
       });
   }

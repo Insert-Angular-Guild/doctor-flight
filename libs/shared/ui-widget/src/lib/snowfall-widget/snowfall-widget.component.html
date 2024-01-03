@@ -1,0 +1,22 @@
+<div class="snowfall-widget-card">
+  <div class="snowfall-widget-data" *ngIf="snowfall$ | async as snowfall">
+    <div class="snowfall-widget-data-value">
+      <span>Amount:</span>
+      <span>{{ snowfall.amount.value }}</span>
+      <span>{{ snowfall.amount.unit }}</span>
+    </div>
+    <div class="snowfall-widget-data-value">
+      <span>Intensity:</span>
+      <span>{{ snowfall.intensity }}</span>
+    </div>
+    <div class="snowfall-widget-data-value">
+      <span>Type:</span>
+      <span>{{ snowfall.type }}</span>
+    </div>
+    <div class="snowfall-widget-data-value">
+      <span>Accumulation:</span>
+      <span>{{ snowfall.accumulation.value }}</span>
+      <span>{{ snowfall.accumulation.unit }}</span>
+    </div>
+  </div>
+</div>

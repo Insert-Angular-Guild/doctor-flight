@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 // entity
-import { WeatherStatus } from '../entities/weather.response';
+import { WeatherStatus, Snowfall } from '../entities/weather.response';
 
 // shared
 import { log } from '@shared/util-rxjs-custom-operators';
@@ -23,5 +23,11 @@ export class WeatherService {
       .pipe((weatherStatus$) =>
         log(weatherStatus$, 'WeatherService:::status()')
       );
+  }
+
+  snowfall(): Observable<Snowfall> {
+    return this.http
+      .get<Snowfall>(`${WEATHER_URL}snowfall`)
+      .pipe((snowfall$) => log(snowfall$, 'WeatherService:::snowfall()'));
   }
 }
