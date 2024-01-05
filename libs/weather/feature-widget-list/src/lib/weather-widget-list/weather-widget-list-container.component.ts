@@ -1,7 +1,7 @@
 // angular
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
 
 // dependencies
 import { Observable } from 'rxjs';
@@ -16,7 +16,9 @@ import { WeatherStatus } from '../../../../domain/src/lib/entities/weather.respo
 import { ShadowDirective } from '@shared/util-styling-directives';
 import {
   ExampleWidgetComponent,
-  SharedUiWidgetComponent
+  SharedUiWidgetComponent,
+  WidgetRefreshButtonComponent,
+  WindWidgetComponent
 } from '@shared/ui-widget';
 
 @Component({
@@ -24,10 +26,12 @@ import {
   standalone: true,
   imports: [
     CommonModule,
-    MatTableModule,
+    MatIconModule,
     ShadowDirective,
     ExampleWidgetComponent,
-    SharedUiWidgetComponent
+    SharedUiWidgetComponent,
+    WidgetRefreshButtonComponent,
+    WindWidgetComponent
   ],
   templateUrl: './weather-widget-list-container.component.html',
   styleUrls: ['./weather-widget-list-container.component.scss'],
