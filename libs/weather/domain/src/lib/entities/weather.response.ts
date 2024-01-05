@@ -12,7 +12,7 @@ export interface Wind {
     degrees: number; // Wind direction in degrees (0° to 360°)
     cardinalDirection: string; // Cardinal direction (e.g., "N" for North, "SW" for Southwest)
   };
-  gust?: {
+  gust: {
     speed: number; // Gust speed in meters per second
     unit: 'm/s' | 'km/h' | 'mph'; // Unit for gust speed
   };
