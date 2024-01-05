@@ -1,20 +1,19 @@
-<div class="wind-widget_content">
+<div
+  *ngIf="windData$ | async as data; else spinner"
+  class="wind-widget_content"
+>
   <div class="wind-widget_data-containter">
     <div class="wind-widget_data">
-      <span class="wind-widget_data-value">{{
-        (windData$ | async)?.speed?.value
-      }}</span>
+      <span class="wind-widget_data-value">{{ data?.speed?.value }}</span>
       <div class="wind-widget_data-description">
-        <span>{{ (windData$ | async)?.speed?.unit }}</span>
+        <span>{{ data?.speed?.unit }}</span>
         <span style="color: #3b849efb">Speed</span>
       </div>
     </div>
     <div class="wind-widget_data">
-      <span class="wind-widget_data-value">{{
-        (windData$ | async)?.gust?.speed
-      }}</span>
+      <span class="wind-widget_data-value">{{ data?.gust?.speed }}</span>
       <div class="wind-widget_data-description">
-        <span>{{ (windData$ | async)?.gust?.unit }}</span>
+        <span>{{ data?.gust?.unit }}</span>
         <span style="color: #3b849efb">Gust</span>
       </div>
     </div>
@@ -22,7 +21,7 @@
   <div class="wind-widget_compass">
     <div class="wind-widget_compass-face">
       <div class="wind-widget_direction-value">
-        <span>{{ (windData$ | async)?.direction?.cardinalDirection }}</span>
+        <span>{{ data?.direction?.cardinalDirection }}</span>
       </div>
       <span class="wind-widget_north">N</span>
       <span class="wind-widget_east">E</span>
@@ -31,10 +30,13 @@
       <div
         class="wind-widget_compass-needle"
         [ngStyle]="{
-          transform:
-            'rotate(' + (windData$ | async)?.direction?.degrees + 'deg)'
+          transform: 'rotate(' + data?.direction?.degrees + 'deg)'
         }"
       ></div>
     </div>
   </div>
 </div>
+
+<ng-template #spinner>
+  <mat-spinner></mat-spinner>
+</ng-template>

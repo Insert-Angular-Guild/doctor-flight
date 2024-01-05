@@ -1,6 +1,7 @@
 // angular
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 // dependencies
 import { Observable } from 'rxjs';
@@ -14,7 +15,7 @@ import { WeatherFacade, Wind } from '@weather';
 @Component({
   selector: 'wind-widget',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatProgressSpinnerModule],
   templateUrl: './wind-widget.component.html',
   styleUrls: ['./wind-widget.component.scss'],
   providers: [

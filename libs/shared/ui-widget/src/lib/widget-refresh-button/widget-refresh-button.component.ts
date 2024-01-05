@@ -1,21 +1,20 @@
 // angular
 import {
   Component,
+  DestroyRef,
   EventEmitter,
-  OnDestroy,
+  inject,
   OnInit,
   Output,
   ViewChild
 } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
-// dependencies
-import { Subscription } from 'rxjs';
-
 // config
-import { WIDGETBUTTON, WidgetButton } from '../config/widget-button.token';
+import { WIDGET_BUTTON, WidgetButton } from '../config/widget-button.token';
 import { RefreshButtonDirective } from '../config/refresh-button.directive';
 
 @Component({
@@ -31,35 +30,27 @@ import { RefreshButtonDirective } from '../config/refresh-button.directive';
   styleUrls: ['./widget-refresh-button.component.scss'],
   providers: [
     {
-      provide: WIDGETBUTTON,
+      provide: WIDGET_BUTTON,
       useExisting: WidgetRefreshButtonComponent
     }
   ]
 })
-export class WidgetRefreshButtonComponent
-  implements WidgetButton, OnInit, OnDestroy
-{
+export class WidgetRefreshButtonComponent implements WidgetButton, OnInit {
   @ViewChild(RefreshButtonDirective, { static: true })
   refreshButtonDirective!: RefreshButtonDirective;
 
   @Output()
-  refreshBtn: EventEmitter<void> = new EventEmitter<void>();
+  refresh: EventEmitter<void> = new EventEmitter<void>();
 
-  private subscription = new Subscription();
+  private destroyRef = inject(DestroyRef);
 
   ngOnInit(): void {
     this.refreshBtnListener();
   }
 
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
-
   private refreshBtnListener(): void {
-    this.subscription.add(
-      this.refreshButtonDirective.refreshButton
-        .pipe()
-        .subscribe(() => this.refreshBtn.emit())
-    );
+    this.refreshButtonDirective.refresh
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(() => this.refresh.emit());
   }
 }

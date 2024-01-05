@@ -7,9 +7,9 @@ import { Directive, EventEmitter, HostListener, Output } from '@angular/core';
 })
 export class RefreshButtonDirective {
   @Output()
-  refreshButton = new EventEmitter<void>();
+  refresh = new EventEmitter<void>();
 
   @HostListener('click', ['$event']) onClick(): void {
-    this.refreshButton.emit();
+    this.refresh.emit();
   }
 }

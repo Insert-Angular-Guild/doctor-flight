@@ -26,6 +26,6 @@ export class WeatherService {
   }
 
   wind(): Observable<Wind> {
-    return this.http.get<Wind>(`${WEATHER_URL}wind`).pipe();
+    return this.http.get<Wind>(`${WEATHER_URL}wind`);
   }
 }

@@ -2,15 +2,15 @@
 import { EventEmitter, InjectionToken } from '@angular/core';
 
 export interface WidgetButton {
-  refreshBtn: EventEmitter<void>;
+  refresh: EventEmitter<void>;
 }
 
-export const WIDGETBUTTON = new InjectionToken<WidgetButton>(
+export const WIDGET_BUTTON = new InjectionToken<WidgetButton>(
   'widget-button.token',
   {
     factory(): WidgetButton {
       return {
-        refreshBtn: new EventEmitter<void>()
+        refresh: new EventEmitter<void>()
       };
     },
     providedIn: 'root'
