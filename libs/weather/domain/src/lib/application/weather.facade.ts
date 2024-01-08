@@ -9,6 +9,7 @@ import { WeatherService } from '../infrastructure/weather.service';
 
 // entities
 import { WeatherStatus, Snowfall } from '../entities/weather.response';
+import { UISnowfall } from '../entities/weather';
 
 @Injectable({ providedIn: 'root' })
 export class WeatherFacade {
@@ -49,12 +50,27 @@ export class WeatherFacade {
       .pipe()
       .subscribe({
         next: (snowfall: Snowfall): void =>
-          this.snowfallSubject$.next(snowfall),
+          this.snowfallSubject$.next(this.mapToUISnowfall(snowfall)),
         error: this.logError()
       });
   }
 
   private logError() {
     return (err: Error): void => console.error('err', err);
+  }
+
+  private mapToUISnowfall(snowfall: Snowfall): UISnowfall {
+    return {
+      amount: {
+        value: snowfall.amount.value,
+        unit: snowfall.amount.unit
+      },
+      intensity: snowfall.intensity,
+      type: snowfall.type,
+      accumulation: {
+        value: snowfall.accumulation.value,
+        unit: snowfall.accumulation.unit
+      }
+    };
   }
 }
