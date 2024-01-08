@@ -1,0 +1,17 @@
+.snowfall-widget-card {
+  display: flex;
+  flex-direction: column;
+
+  .snowfall-widget-data {
+    padding: 16px 0;
+
+    .snowfall-widget-data-value {
+      font-size: 16px;
+      margin-bottom: 4px;
+
+      span {
+        margin-right: 4px;
+      }
+    }
+  }
+}

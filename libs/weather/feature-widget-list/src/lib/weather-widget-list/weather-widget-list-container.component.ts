@@ -16,7 +16,8 @@ import { WeatherStatus } from '../../../../domain/src/lib/entities/weather.respo
 import { ShadowDirective } from '@shared/util-styling-directives';
 import {
   ExampleWidgetComponent,
-  SharedUiWidgetComponent
+  SharedUiWidgetComponent,
+  SnowfallWidgetComponent
 } from '@shared/ui-widget';
 
 @Component({
@@ -27,7 +28,8 @@ import {
     MatTableModule,
     ShadowDirective,
     ExampleWidgetComponent,
-    SharedUiWidgetComponent
+    SharedUiWidgetComponent,
+    SnowfallWidgetComponent
   ],
   templateUrl: './weather-widget-list-container.component.html',
   styleUrls: ['./weather-widget-list-container.component.scss'],

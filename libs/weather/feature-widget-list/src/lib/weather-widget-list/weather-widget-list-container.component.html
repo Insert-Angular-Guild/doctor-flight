@@ -6,6 +6,16 @@
     </div>
     <example-widget-component widget></example-widget-component>
   </shared-ui-widget>
+  <shared-ui-widget
+    class="weather-widget"
+    stylingShadow
+    [stylingShadowInput]="{ color: '#87CEEB', type: 'SOLID' }"
+  >
+    <div header>
+      <h3>SNOWFALL WIDGET</h3>
+    </div>
+    <snowfall-widget-component widget></snowfall-widget-component>
+  </shared-ui-widget>
 </div>
 } @else {
 <div>Weather Data Loading...</div>
